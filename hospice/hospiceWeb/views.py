@@ -218,7 +218,7 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
 
     mycursor.execute(command, (int(gender), int(disease), int(p_disease), int(
         condition), int(bloodGroup), addmissionDate, ip, name, email, int(mobile)))
-    console.log("Your ipno is:" + ip)
+    prompt("The IPNO of patient is:" + ip)
     mydbs.commit()
     mydbs.close()
 
