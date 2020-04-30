@@ -210,7 +210,6 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
         # print(ip + str(fno) + "-" + str(bno))
 
         ip = ip + str(fno) + "-" + str(bno)
-        console.log("Your ipno is:" + ip)
 
     mycursor = mydbs.cursor()
     mycursor.execute("USE hospice")
@@ -219,6 +218,7 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
 
     mycursor.execute(command, (int(gender), int(disease), int(p_disease), int(
         condition), int(bloodGroup), addmissionDate, ip, name, email, int(mobile)))
+    console.log("Your ipno is:" + ip)
     mydbs.commit()
     mydbs.close()
 
