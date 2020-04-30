@@ -129,7 +129,7 @@ def generateJSON(pid):
     mycursor.execute("SELECT IPNo FROM `admission` WHERE genderId = '" +
                      str(data[0]) + "' AND isCritical = '" + str(data[1]) + "' LIMIT 10")
     data = list(mycursor.fetchall())
-    print(data)
+    # print(data)
     patient = list(p[0] for p in data)
     datediff = []
     for p in patient:
@@ -137,14 +137,14 @@ def generateJSON(pid):
             "SELECT dateDiff from `admission` WHERE  IPNo = '" + p + "' ")
         datediff.append(mycursor.fetchone())
     datediff = list(p[0] for p in datediff)
-    print(datediff)
+    # print(datediff)
     name = []
     for p in patient:
         mycursor.execute(
             "SELECT name from `admission` WHERE  IPNo = '" + p + "' ")
         name.append(mycursor.fetchone())
     name = list(p[0].split()[0] for p in name)
-    print(name)
+    # print(name)
     mydbs.commit()
     mydbs.close()
     return patient, datediff, name
@@ -207,7 +207,8 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
         bno = random.randint(10, 1000000)
         if(ip + str(fno) + "-" + str(bno) not in all_patient):
             flag = False
-        print(ip + str(fno) + "-" + str(bno))
+        # print(ip + str(fno) + "-" + str(bno))
+        console.log("Your ipno is:"ip + str(fno) + "-" + str(bno))
         ip = ip + str(fno) + "-" + str(bno)
 
     mycursor = mydbs.cursor()
@@ -240,7 +241,7 @@ def data(request):
         email = request.POST['email']
         data_entry(addmission_date, disease, p_disease, condition,
                    bloodgroup, name, gender, address, email, mobile)
-        print(addmission_date + " " + str(strftime("%H:%M:%S", localtime())))
+        # print(addmission_date + " " + str(strftime("%H:%M:%S", localtime())))
 
         return render(request, 'hospiceweb/data1.html', {})
     else:
