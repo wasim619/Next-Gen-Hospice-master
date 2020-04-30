@@ -208,8 +208,9 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
         if(ip + str(fno) + "-" + str(bno) not in all_patient):
             flag = False
         # print(ip + str(fno) + "-" + str(bno))
-        console.log("Your ipno is:"ip + str(fno) + "-" + str(bno))
+
         ip = ip + str(fno) + "-" + str(bno)
+        console.log("Your ipno is:" + ip)
 
     mycursor = mydbs.cursor()
     mycursor.execute("USE hospice")
