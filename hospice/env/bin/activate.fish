@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/wasim/Desktop/Next-Gen-Hospice-master/hospice/env"
+set -gx VIRTUAL_ENV "/home/wasim/aws/Next-Gen-Hospice-master/hospice/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

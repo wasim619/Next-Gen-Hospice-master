@@ -1,4 +1,4 @@
-#!/home/wasim/Desktop/Next-Gen-Hospice-master/hospice/env/bin/python3
+#!/home/wasim/aws/Next-Gen-Hospice-master/hospice/env/bin/python
 from django.core import management
 
 if __name__ == "__main__":
