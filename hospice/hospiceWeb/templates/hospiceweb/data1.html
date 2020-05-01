@@ -62,14 +62,14 @@
     
         <header class="text-center mt-5 mx-auto main-head"><b>Patient Entry</b></header>
 
-<div id = "pop" style="display:{{submit}};">
+{% comment %} <div id = "pop" style="display:{{submit}};">
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
   Data has been inserted!!!&nbsp;&nbsp;&nbsp;&nbsp;The Patient Id is : &nbsp;&nbsp;<b>{{ip}}</b>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-</div>
+</div> {% endcomment %}
 
         <div class="jumbotron mt-4 jumbo1">
 
@@ -283,7 +283,7 @@ $(function(){
 });
 
 {% if thank %}
-{% comment %} alert('The IPNO of patient is: {{ip}}') {% endcomment %}
+alert('The IPNO of patient is: {{ip}}')
 {% endif %}
 
 
