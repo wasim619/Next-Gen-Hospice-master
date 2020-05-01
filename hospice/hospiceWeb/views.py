@@ -198,6 +198,8 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
         auth_plugin='mysql_native_password'
     )
 
+    global ip
+
     flag = True
     ip = "IP-"
     fno = 0
@@ -218,7 +220,7 @@ def data_entry(addmissionDate, disease, p_disease, condition, bloodGroup, name, 
 
     mycursor.execute(command, (int(gender), int(disease), int(p_disease), int(
         condition), int(bloodGroup), addmissionDate, ip, name, email, int(mobile)))
-    prompt("The IPNO of patient is:" + ip)
+    # prompt("The IPNO of patient is:" + ip)
     mydbs.commit()
     mydbs.close()
 
@@ -243,8 +245,8 @@ def data(request):
         data_entry(addmission_date, disease, p_disease, condition,
                    bloodgroup, name, gender, address, email, mobile)
         # print(addmission_date + " " + str(strftime("%H:%M:%S", localtime())))
-
-        return render(request, 'hospiceweb/data1.html', {})
+        thank = True
+        return render(request, 'hospiceweb/data1.html', {'ip': ip, 'thank': thank})
     else:
         return render(request, 'hospiceweb/data1.html')
 
