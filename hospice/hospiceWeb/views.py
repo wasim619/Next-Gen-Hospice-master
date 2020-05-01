@@ -250,7 +250,7 @@ def data(request):
         return render(request, 'hospiceweb/data1.html', {'ip': ip, 'thank': thank, 'submit': 'block'})
     else:
         return render(request, 'hospiceweb/data1.html' , {'submit' : 'none'})
-
+    return render(request, 'hospiceweb/data1.html' , {'submit' : 'none'})
 
 def hospices(request):
 
