@@ -245,6 +245,7 @@ def data(request):
         data_entry(addmission_date, disease, p_disease, condition,
                    bloodgroup, name, gender, address, email, mobile)
         # print(addmission_date + " " + str(strftime("%H:%M:%S", localtime())))
+        
         thank = True
         return render(request, 'hospiceweb/data1.html', {'ip': ip, 'thank': thank})
     else:
