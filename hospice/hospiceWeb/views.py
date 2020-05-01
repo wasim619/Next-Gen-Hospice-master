@@ -247,9 +247,9 @@ def data(request):
         # print(addmission_date + " " + str(strftime("%H:%M:%S", localtime())))
         
         thank = True
-        return render(request, 'hospiceweb/data1.html', {'ip': ip, 'thank': thank, 'submit': "block"})
+        return render(request, 'hospiceweb/data1.html', {'ip': ip, 'thank': thank, 'submit': 'block'})
     else:
-        return render(request, 'hospiceweb/data1.html' , {'submit' : "none"})
+        return render(request, 'hospiceweb/data1.html' , {'submit' : 'none'})
 
 
 def hospices(request):
