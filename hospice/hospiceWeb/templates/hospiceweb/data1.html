@@ -17,10 +17,11 @@
   color: yellow;
 }
 
+#pop {
+    display: {{ submit }};
+}
+
 </style>
-
-
-
 
 
 <body>
@@ -58,7 +59,18 @@
     </nav>
 
     <div class="container">
+    
         <header class="text-center mt-5 mx-auto main-head"><b>Patient Entry</b></header>
+
+<div id = "pop">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  Data has been inserted!!!&nbsp;&nbsp;&nbsp;&nbsp;The Patient Id is : &nbsp;&nbsp;<b>{{ip}}</b>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>
+
         <div class="jumbotron mt-4 jumbo1">
 
 
@@ -228,7 +240,9 @@
                                     </div>
                                 
                         </div>
-                        <center>  <button class="btn btn-primary " type="submit">Submit Details</button></center>
+                        <center> 
+                        <button class="btn btn-primary " type="submit">Submit Details</button>
+                        </center>
                         </div>
                     </div>
                 </div>
@@ -269,8 +283,9 @@ $(function(){
 });
 
 {% if thank %}
-alert('The IPNO of patient is: {{ip}}')
+{% comment %} alert('The IPNO of patient is: {{ip}}') {% endcomment %}
 {% endif %}
+
 
 
 </script
