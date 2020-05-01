@@ -241,7 +241,7 @@
                                 
                         </div>
                         <center> 
-                        <button class="btn btn-primary " type="submit">Submit Details</button>
+                        <button class="btn btn-primary " type="submit" id= "datasubmit">Submit Details</button>
                         </center>
                         </div>
                     </div>
@@ -289,6 +289,10 @@ $(function(){
 $(document).ready(function() {
 
    $("#pop").css("display", "none")
+
+    $('#datasubmit').click(function(){
+        $("#pop").css("display", "block")
+    });
 
 });
 
